@@ -42,7 +42,7 @@ export class AppComponent {
     if (!f.checkValidity()) { f.reportValidity(); return; }
     this.loading = true;
     const payload = { ...this.form, date: this.form.date ? this.formatDate(this.form.date) : '' };
-    this.http.post('http://localhost:3000/send-booking', payload).subscribe({
+    this.http.post('https://mehndi-backend-coral.vercel.app/send-booking', payload).subscribe({
       next: () => {
         f.reset();
         this.form.date = '';
